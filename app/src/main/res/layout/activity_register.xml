@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ecommerce.qgdagraciela.com.ecommerceapp.RegisterActivity">
+
+    <EditText
+        android:id="@+id/etCpf"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etName"
+        android:layout_alignStart="@+id/etName"
+        android:ems="10"
+        android:hint="CPF"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etAddress"
+        android:layout_alignStart="@+id/etAddress"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="62dp" />
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etState"
+        android:layout_alignStart="@+id/etState"
+        android:ems="10"
+        android:hint="Endereço"
+        android:inputType="textPostalAddress"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="108dp" />
+
+    <EditText
+        android:id="@+id/etState"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etCity"
+        android:layout_alignStart="@+id/etCity"
+        android:ems="10"
+        android:hint="Estado"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="154dp" />
+
+    <EditText
+        android:id="@+id/etCity"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etPhone"
+        android:layout_alignStart="@+id/etPhone"
+        android:ems="10"
+        android:hint="Cidade"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etEmail"
+        android:layout_alignStart="@+id/etEmail"
+        android:ems="10"
+        android:hint="Telefone"
+        android:inputType="phone"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="246dp" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etPassword"
+        android:layout_alignStart="@+id/etPassword"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="292dp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bRegister"
+        android:layout_alignStart="@+id/bRegister"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="338dp" />
+
+    <Button
+        android:id="@+id/bRegister"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="73dp"
+        android:text="Registrar"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="384dp" />
+
+</RelativeLayout>
