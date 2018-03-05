@@ -1,17 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="ecommerce.qgdagraciela.com.ecommerceapp.UserAreaActivity">
 
-    <EditText
-        android:id="@+id/etName"
-        android:layout_width="356dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:text="Wellcome msg"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp" />
-</android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/bProdutos"
+        android:layout_width="351dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/bProcurar"
+        android:layout_below="@+id/tvWelcome"
+        android:layout_marginTop="28dp"
+        android:text="Ver produtos"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="73dp" />
+
+    <Button
+        android:id="@+id/bProcurar"
+        android:layout_width="351dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bProdutos"
+        android:layout_centerHorizontal="true"
+        android:text="Procurar produtos"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="121dp" />
+
+    <Button
+        android:id="@+id/bCarrinho"
+        android:layout_width="351dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/bProcurar"
+        android:layout_below="@+id/bProcurar"
+        android:text="Meu carrinho"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="169dp" />
+
+    <Button
+        android:id="@+id/bConta"
+        android:layout_width="351dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bCarrinho"
+        android:layout_centerHorizontal="true"
+        android:text="Minha conta"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="217dp" />
+
+    <Button
+        android:id="@+id/bSair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bConta"
+        android:layout_alignStart="@+id/bConta"
+        android:layout_below="@+id/bConta"
+        android:text="Sair" />
+
+</RelativeLayout>
