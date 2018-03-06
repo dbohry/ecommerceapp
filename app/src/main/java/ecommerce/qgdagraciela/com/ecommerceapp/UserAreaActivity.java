@@ -27,16 +27,44 @@ public class UserAreaActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        tvWelcome.setText("Seja bem vindo, " + extras.getString("username"));
+        tvWelcome.setText("Seja bem vindo, " + extras.getString("nome"));
+
+        bConta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle extras = getIntent().getExtras();
+
+                Intent intent = new Intent(UserAreaActivity.this, MinhaContaActivity.class);
+                intent.putExtra("nome", extras.getString("nome"));
+                intent.putExtra("cpf", extras.getString("cpf"));
+                intent.putExtra("endereco", extras.getString("endereco"));
+                intent.putExtra("cidade", extras.getString("cidade"));
+                intent.putExtra("estado", extras.getString("estado"));
+                intent.putExtra("telefone", extras.getString("telefone"));
+                intent.putExtra("email", extras.getString("email"));
+                intent.putExtra("id", extras.getString("id"));
+                intent.putExtra("token", extras.getString("token"));
+                UserAreaActivity.this.startActivity(intent);
+            }
+        });
 
         bSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registerIntent = new Intent(UserAreaActivity.this, LoginActivity.class);
-                getIntent().removeExtra("username");
-                UserAreaActivity.this.startActivity(registerIntent);
+                Intent logoutIntent = new Intent(UserAreaActivity.this, LoginActivity.class);
+                getIntent().removeExtra("nome");
+                getIntent().removeExtra("email");
+                getIntent().removeExtra("endereco");
+                getIntent().removeExtra("cidade");
+                getIntent().removeExtra("estado");
+                getIntent().removeExtra("cpf");
+                getIntent().removeExtra("telefone");
+                getIntent().removeExtra("id");
+                getIntent().removeExtra("token");
+                UserAreaActivity.this.startActivity(logoutIntent);
             }
         });
+
 
     }
 }

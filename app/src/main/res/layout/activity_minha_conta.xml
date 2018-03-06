@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ecommerce.qgdagraciela.com.ecommerceapp.RegisterActivity">
+    tools:context="ecommerce.qgdagraciela.com.ecommerceapp.MinhaContaActivity">
 
     <EditText
-        android:id="@+id/etCpf"
+        android:id="@+id/etCpfEdit"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etNome"
-        android:layout_alignStart="@+id/etNome"
+        android:layout_above="@+id/etNomeEdit"
+        android:layout_alignStart="@+id/etNomeEdit"
         android:ems="10"
         android:hint="CPF"
         android:inputType="number"
@@ -19,11 +19,11 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
-        android:id="@+id/etNome"
+        android:id="@+id/etNomeEdit"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etEndereco"
-        android:layout_alignStart="@+id/etEndereco"
+        android:layout_above="@+id/etEnderecoEdit"
+        android:layout_alignStart="@+id/etEnderecoEdit"
         android:ems="10"
         android:hint="Nome"
         android:inputType="textPersonName"
@@ -31,11 +31,11 @@
         tools:layout_editor_absoluteY="62dp" />
 
     <EditText
-        android:id="@+id/etEndereco"
+        android:id="@+id/etEnderecoEdit"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etEstado"
-        android:layout_alignStart="@+id/etEstado"
+        android:layout_above="@+id/etEstadoEdit"
+        android:layout_alignStart="@+id/etEstadoEdit"
         android:ems="10"
         android:hint="Endereço"
         android:inputType="textPostalAddress"
@@ -43,11 +43,11 @@
         tools:layout_editor_absoluteY="108dp" />
 
     <EditText
-        android:id="@+id/etEstado"
+        android:id="@+id/etEstadoEdit"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etCidade"
-        android:layout_alignStart="@+id/etCidade"
+        android:layout_above="@+id/etCidadeEdit"
+        android:layout_alignStart="@+id/etCidadeEdit"
         android:ems="10"
         android:hint="Estado"
         android:inputType="textPersonName"
@@ -55,11 +55,11 @@
         tools:layout_editor_absoluteY="154dp" />
 
     <EditText
-        android:id="@+id/etCidade"
+        android:id="@+id/etCidadeEdit"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etTelefone"
-        android:layout_alignStart="@+id/etTelefone"
+        android:layout_above="@+id/etTelefoneEdit"
+        android:layout_alignStart="@+id/etTelefoneEdit"
         android:ems="10"
         android:hint="Cidade"
         android:inputType="textPersonName"
@@ -67,11 +67,11 @@
         tools:layout_editor_absoluteY="200dp" />
 
     <EditText
-        android:id="@+id/etTelefone"
+        android:id="@+id/etTelefoneEdit"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etEmail"
-        android:layout_alignStart="@+id/etEmail"
+        android:layout_above="@+id/etEmailEdit"
+        android:layout_alignStart="@+id/etEmailEdit"
         android:ems="10"
         android:hint="Telefone"
         android:inputType="phone"
@@ -79,11 +79,11 @@
         tools:layout_editor_absoluteY="246dp" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/etEmailEdit"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etSenha"
-        android:layout_alignStart="@+id/etSenha"
+        android:layout_above="@+id/etSenhaEdit"
+        android:layout_alignStart="@+id/etSenhaEdit"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -91,11 +91,11 @@
         tools:layout_editor_absoluteY="292dp" />
 
     <EditText
-        android:id="@+id/etSenha"
+        android:id="@+id/etSenhaEdit"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bSalvar"
-        android:layout_alignStart="@+id/bSalvar"
+        android:layout_above="@+id/bSalvarEdit"
+        android:layout_alignStart="@+id/bSalvarEdit"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
@@ -103,22 +103,32 @@
         tools:layout_editor_absoluteY="338dp" />
 
     <Button
-        android:id="@+id/bSalvar"
+        android:id="@+id/bSalvarEdit"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="73dp"
-        android:text="Registrar"
+        android:text="Salvar"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="384dp" />
 
+    <Button
+        android:id="@+id/bRemover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bSalvarEdit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/bSalvarEdit"
+        android:layout_marginBottom="22dp"
+        android:text="Remover" />
+
     <TextView
-        android:id="@+id/tvRegister"
+        android:id="@+id/tvMinhaConta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/etCpf"
-        android:text="Registrar" />
+        android:layout_alignStart="@+id/etCpfEdit"
+        android:text="Minha Conta" />
 
 </RelativeLayout>

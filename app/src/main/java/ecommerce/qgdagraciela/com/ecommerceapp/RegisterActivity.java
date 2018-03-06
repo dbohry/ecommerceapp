@@ -8,9 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import ecommerce.qgdagraciela.com.ecommerceapp.clients.LoginClient;
 import ecommerce.qgdagraciela.com.ecommerceapp.clients.RegisterClient;
-import ecommerce.qgdagraciela.com.ecommerceapp.dtos.LoginDTO;
 import ecommerce.qgdagraciela.com.ecommerceapp.dtos.UsuarioDTO;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
         final EditText etPassword = (EditText) findViewById(R.id.etSenha);
 
-        final Button bRegister = (Button) findViewById(R.id.bRegister);
+        final Button bRegister = (Button) findViewById(R.id.bSalvar);
 
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override

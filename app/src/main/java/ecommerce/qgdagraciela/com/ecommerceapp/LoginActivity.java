@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
         final EditText etPassword = (EditText) findViewById(R.id.etSenha);
         final Button bLogin = (Button) findViewById(R.id.bLogin);
-        final Button bRegister = (Button) findViewById(R.id.bRegister);
+        final Button bRegister = (Button) findViewById(R.id.bSalvar);
 
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,10 +56,25 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<LoginDTO> call, Response<LoginDTO> response) {
                             LoginDTO authentication = response.body();
-                            Intent userAreaIntent = new Intent(LoginActivity.this, UserAreaActivity.class);
-                            if (authentication != null && authentication.getUsuario() != null)
-                                userAreaIntent.putExtra("username", authentication.getUsuario().getNome());
-                            LoginActivity.this.startActivity(userAreaIntent);
+                            if (authentication == null)
+                                Toast.makeText(LoginActivity.this, "Verifique o email e senha e tente novamente", Toast.LENGTH_SHORT).show();
+                            else {
+                                Intent intent = new Intent(LoginActivity.this, UserAreaActivity.class);
+                                if (authentication != null && authentication.getUsuario() != null) {
+                                    intent.putExtra("id", String.valueOf(authentication.getUsuario().getId()));
+                                    intent.putExtra("nome", authentication.getUsuario().getNome());
+                                    intent.putExtra("cpf", authentication.getUsuario().getCpf());
+                                    intent.putExtra("endereco", authentication.getUsuario().getEndereco());
+                                    intent.putExtra("cidade", authentication.getUsuario().getCidade());
+                                    intent.putExtra("estado", authentication.getUsuario().getEstado());
+                                    intent.putExtra("telefone", authentication.getUsuario().getTelefone());
+                                    intent.putExtra("email", authentication.getUsuario().getEmail());
+                                    intent.putExtra("token", authentication.getToken());
+                                }
+
+                                LoginActivity.this.startActivity(intent);
+                            }
+
                         }
 
                         @Override
