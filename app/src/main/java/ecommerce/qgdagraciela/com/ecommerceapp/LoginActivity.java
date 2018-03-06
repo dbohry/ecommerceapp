@@ -18,14 +18,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
+    public static String URL = "http://10.0.2.2:8080";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
-        final EditText etPassword = (EditText) findViewById(R.id.etPassword);
+        final EditText etPassword = (EditText) findViewById(R.id.etSenha);
         final Button bLogin = (Button) findViewById(R.id.bLogin);
         final Button bRegister = (Button) findViewById(R.id.bRegister);
 
@@ -43,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (!email.isEmpty() && !password.isEmpty()) {
                     Retrofit.Builder builder = new Retrofit.Builder()
-                            .baseUrl("http://10.0.2.2:8080")
+                            .baseUrl(URL)
                             .addConverterFactory(GsonConverterFactory.create());
 
                     Retrofit retrofit = builder.build();
@@ -74,8 +75,8 @@ public class LoginActivity extends AppCompatActivity {
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-                LoginActivity.this.startActivity(registerIntent);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                LoginActivity.this.startActivity(intent);
             }
         });
 

@@ -10,8 +10,8 @@
         android:id="@+id/etCpf"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etName"
-        android:layout_alignStart="@+id/etName"
+        android:layout_above="@+id/etNome"
+        android:layout_alignStart="@+id/etNome"
         android:ems="10"
         android:hint="CPF"
         android:inputType="number"
@@ -19,11 +19,11 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/etNome"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etAddress"
-        android:layout_alignStart="@+id/etAddress"
+        android:layout_above="@+id/etEndereco"
+        android:layout_alignStart="@+id/etEndereco"
         android:ems="10"
         android:hint="Nome"
         android:inputType="textPersonName"
@@ -31,11 +31,11 @@
         tools:layout_editor_absoluteY="62dp" />
 
     <EditText
-        android:id="@+id/etAddress"
+        android:id="@+id/etEndereco"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etState"
-        android:layout_alignStart="@+id/etState"
+        android:layout_above="@+id/etEstado"
+        android:layout_alignStart="@+id/etEstado"
         android:ems="10"
         android:hint="Endereço"
         android:inputType="textPostalAddress"
@@ -43,11 +43,11 @@
         tools:layout_editor_absoluteY="108dp" />
 
     <EditText
-        android:id="@+id/etState"
+        android:id="@+id/etEstado"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etCity"
-        android:layout_alignStart="@+id/etCity"
+        android:layout_above="@+id/etCidade"
+        android:layout_alignStart="@+id/etCidade"
         android:ems="10"
         android:hint="Estado"
         android:inputType="textPersonName"
@@ -55,11 +55,11 @@
         tools:layout_editor_absoluteY="154dp" />
 
     <EditText
-        android:id="@+id/etCity"
+        android:id="@+id/etCidade"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etPhone"
-        android:layout_alignStart="@+id/etPhone"
+        android:layout_above="@+id/etTelefone"
+        android:layout_alignStart="@+id/etTelefone"
         android:ems="10"
         android:hint="Cidade"
         android:inputType="textPersonName"
@@ -67,7 +67,7 @@
         tools:layout_editor_absoluteY="200dp" />
 
     <EditText
-        android:id="@+id/etPhone"
+        android:id="@+id/etTelefone"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/etEmail"
@@ -82,8 +82,8 @@
         android:id="@+id/etEmail"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etPassword"
-        android:layout_alignStart="@+id/etPassword"
+        android:layout_above="@+id/etSenha"
+        android:layout_alignStart="@+id/etSenha"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -91,7 +91,7 @@
         tools:layout_editor_absoluteY="292dp" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etSenha"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/bRegister"
