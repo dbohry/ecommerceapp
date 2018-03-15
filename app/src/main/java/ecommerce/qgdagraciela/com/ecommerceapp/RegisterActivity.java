@@ -67,10 +67,8 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onResponse(Call<UsuarioDTO> call, Response<UsuarioDTO> response) {
                             UsuarioDTO usuarioCriado = response.body();
                             Toast.makeText(RegisterActivity.this, "Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
-                            Intent userAreaIntent = new Intent(RegisterActivity.this, UserAreaActivity.class);
-                            if (usuarioCriado != null)
-                                userAreaIntent.putExtra("username", usuarioCriado.getNome());
-                            RegisterActivity.this.startActivity(userAreaIntent);
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            RegisterActivity.this.startActivity(intent);
                         }
 
                         @Override

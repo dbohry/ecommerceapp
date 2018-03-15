@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public static String URL = "http://10.0.2.2:8080";
+    public static String URL = "https://ecommerce-tcc.herokuapp.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

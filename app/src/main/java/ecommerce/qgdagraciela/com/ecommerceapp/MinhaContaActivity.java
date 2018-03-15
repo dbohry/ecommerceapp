@@ -1,6 +1,8 @@
 package ecommerce.qgdagraciela.com.ecommerceapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,7 @@ import ecommerce.qgdagraciela.com.ecommerceapp.clients.LoginClient;
 import ecommerce.qgdagraciela.com.ecommerceapp.clients.UsuarioClient;
 import ecommerce.qgdagraciela.com.ecommerceapp.dtos.LoginDTO;
 import ecommerce.qgdagraciela.com.ecommerceapp.dtos.UsuarioDTO;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -36,6 +39,7 @@ public class MinhaContaActivity extends AppCompatActivity {
         final EditText etEmail = (EditText) findViewById(R.id.etEmailEdit);
         final EditText etPassword = (EditText) findViewById(R.id.etSenhaEdit);
         final Button bSalvar = (Button) findViewById(R.id.bSalvarEdit);
+        final Button bRemover = (Button) findViewById(R.id.bRemover);
 
         final Bundle extras = getIntent().getExtras();
 
@@ -91,16 +95,14 @@ public class MinhaContaActivity extends AppCompatActivity {
                                 Toast.makeText(MinhaContaActivity.this, "Ocorreu um erro ao atualizar dados", Toast.LENGTH_SHORT).show();
                             else {
                                 Intent intent = new Intent(MinhaContaActivity.this, UserAreaActivity.class);
-                                if (usuario != null) {
-                                    intent.putExtra("id", usuario.getId());
-                                    intent.putExtra("nome", usuario.getNome());
-                                    intent.putExtra("cpf", usuario.getCpf());
-                                    intent.putExtra("endereco", usuario.getEndereco());
-                                    intent.putExtra("cidade", usuario.getCidade());
-                                    intent.putExtra("estado", usuario.getEstado());
-                                    intent.putExtra("telefone", usuario.getTelefone());
-                                    intent.putExtra("email", usuario.getEmail());
-                                }
+                                intent.putExtra("id", usuario.getId());
+                                intent.putExtra("nome", usuario.getNome());
+                                intent.putExtra("cpf", usuario.getCpf());
+                                intent.putExtra("endereco", usuario.getEndereco());
+                                intent.putExtra("cidade", usuario.getCidade());
+                                intent.putExtra("estado", usuario.getEstado());
+                                intent.putExtra("telefone", usuario.getTelefone());
+                                intent.putExtra("email", usuario.getEmail());
 
                                 Toast.makeText(MinhaContaActivity.this, "Cadastro atualizado com sucesso!", Toast.LENGTH_SHORT).show();
                                 MinhaContaActivity.this.startActivity(intent);
@@ -114,6 +116,49 @@ public class MinhaContaActivity extends AppCompatActivity {
                     });
                 }
 
+            }
+        });
+
+        bRemover.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MinhaContaActivity.this);
+                builder.setTitle("Remover conta");
+                builder.setMessage("Tem certeza que deseja remover essta conta?");
+                builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MinhaContaActivity.this, "Removendo aguarde...", Toast.LENGTH_SHORT).show();
+                        Retrofit.Builder builder = new Retrofit.Builder()
+                                .baseUrl(URL)
+                                .addConverterFactory(GsonConverterFactory.create());
+                        Retrofit retrofit = builder.build();
+
+
+                        UsuarioClient usuarioClient = retrofit.create(UsuarioClient.class);
+                        Call<ResponseBody> call = usuarioClient.delete(
+                                extras.getString("token"),
+                                Long.valueOf(extras.getString("id")));
+
+                        call.enqueue(new Callback<ResponseBody>() {
+                            @Override
+                            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                                Toast.makeText(MinhaContaActivity.this, "Removido com sucesso", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(MinhaContaActivity.this, LoginActivity.class);
+                                MinhaContaActivity.this.startActivity(intent);
+                            }
+
+                            @Override
+                            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                                Toast.makeText(MinhaContaActivity.this, "Falha ao remover", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+                builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    } });
+                AlertDialog alert = builder.create();
+                alert.show();
             }
         });
 
